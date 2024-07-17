@@ -1,0 +1,16 @@
+{% extends 'blog_project/base.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+<h1>Блог</h1>
+<ul class="list-group">
+    {% for post in posts %}
+        <li class="list-group-item">
+            <a href="{% url 'blogpost_detail' post.pk %}">{{ post.title }}</a> - {{ post.created_at|date:"j F, Y" }}
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'blogpost_create' %}" class="btn btn-primary mt-3">Создать новый пост</a>
+<a href="{% url 'home' %}" class="btn btn-secondary mt-3">Главная</a>
+{% endblock %}

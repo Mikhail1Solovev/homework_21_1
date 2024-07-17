@@ -1,0 +1,11 @@
+{% extends 'blog_project/base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<h1>Контакты</h1>
+<p>Это страница контактов.</p>
+<a href="{% url 'home' %}" class="btn btn-secondary">Главная</a>
+<a href="{% url 'about' %}" class="btn btn-secondary">О нас</a>
+<a href="{% url 'blogpost_list' %}" class="btn btn-primary">Блог</a>
+{% endblock %}
